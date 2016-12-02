@@ -4,9 +4,7 @@
     "details": [
       {
         "appID": "Q9CQP43PCR.com.talon.view",
-        "paths": [
-          "*"
-        ]
+        "paths": ["/#/guest?subdomain=www*"]
       }
     ]
   }
