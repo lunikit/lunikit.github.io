@@ -1,4 +1,8 @@
 {
+    "short_name": "Talon View",
+    "name": "Talon View",
+    "display": "standalone",
+    "orientation": "landscape",
     "prefer_related_applications": true,
     "related_applications": [
         {
