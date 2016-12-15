@@ -15,6 +15,6 @@
             "id": "com.talon.view"
         }
     ],
-    "start_url": "index.html",
+    "start_url": "./index.html",
     "display": "standalone"
 }
