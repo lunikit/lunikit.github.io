@@ -5,6 +5,10 @@
       {
         "appID": "Q9CQP43PCR.com.talon.view",
         "paths": ["/guest*", "/#/guest*", "/#/guest/*"]
+      },
+      {
+        "appID": "Q9CQP43PCR.com.tabeeb.react",
+        "paths": ["/guest*", "/#/guest*", "/#/guest/*"]
       }
     ]
   }
