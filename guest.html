@@ -6,35 +6,69 @@
 </head>
 
 <body>
-    <h2>Session</h2>
-    <h4><a href="./index.html">Home</a></h4>
-    <p>
-        <a href="collaborate://collaborate.center/#/guest?subdomain=www&email=nwork4%40mail.ru&token=TGFpeDhDa0MxRWdBdktCbEFRQUFBUFdKMmp1VitXZEV0amZwSEFITUN4dz0%3d">Open Talon</a>
-        <br>
-        <br>
-        <button onclick="launchApp()">Open App</button>
-    </p>
-    <script>
-    (function() {
+
+<div style="
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
+    padding: 10px;
+    line-height: 20px;
+    font-size: 14px;
+    background: #F5F5F5;
+    display: none;
+">
+  <div onclick="launchApp()" style="
+    padding: 10px;
+    float: left;
+    text-decoration: none;
+    cursor: pointer;
+">Open App</div>
+  <div onclick="closeBanner()" style="
+    float: right;
+    padding: 10px 10px;
+    font-size: 20px;
+    cursor: pointer;
+">×</div>
+</div>
+
+<h2>Session</h2>
+<h4><a href="./index.html">Home</a></h4>
+<p>
+    <a href="collaborate://collaborate.center/#/guest?subdomain=www&email=nwork4%40mail.ru&token=TGFpeDhDa0MxRWdBdktCbEFRQUFBUFdKMmp1VitXZEV0amZwSEFITUN4dz0%3d">Open Talon</a>
+    <br>
+    <br>
+    <button onclick="launchApp()">Open App</button>
+</p>
+<script>
+    (function () {
         var customSchema = 'collaborate://';
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         var android = /android/i.test(navigator.userAgent);
 
-        window.launchApp =  function(){
-            var url = customSchema + window.location.hostname + window.location.pathname;
+        window.launchApp = function () {
             if (iOS || android) {
-                setTimeout( function() {
+                var url = customSchema + window.location.hostname + window.location.pathname;
+
+                setTimeout(function () {
                     if (iOS) {
                         window.location = 'https://itunes.apple.com/us/app/talonview/id1164518985?mt=8';
-                    } 
+                    }
                     if (android) {
                         window.location = 'market://details?id=com.talon.view';
                     }
                 }, 200);
+
                 window.location = url;
             }
-        }
+        };
+
+        window.closeBanner = function() {
+        };
     })();  
-    </script>
+</script>
 </body>
+
 </html>
