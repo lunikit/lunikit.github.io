@@ -17,12 +17,11 @@
     <script>
     (function() {
         var customSchema = 'collaborate://';
-
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         var android = /android/i.test(navigator.userAgent);
-        var url = customSchema + window.location.hostname + window.location.pathname;
 
         window.launchApp =  function(){
+            var url = customSchema + window.location.hostname + window.location.pathname;
             if (iOS || android) {
                 setTimeout( function() {
                     if (iOS) {
