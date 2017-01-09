@@ -12,20 +12,32 @@
         <a href="collaborate://collaborate.center/#/guest?subdomain=www&email=nwork4%40mail.ru&token=TGFpeDhDa0MxRWdBdktCbEFRQUFBUFdKMmp1VitXZEV0amZwSEFITUN4dz0%3d">Open Talon</a>
         <br>
         <br>
-        <button onclick="launchApp()">Open Talon</button>
+        <button onclick="launchApp()">Open App</button>
     </p>
-    <script>    
-     var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        function launchApp(){
-            setTimeout( function() {
-                if (iOS) {
-                    window.location = 'https://itunes.apple.com/us/app/talonview/id1164518985?mt=8';
-                } else {
-                    window.location = 'market://details?id=com.talon.view';
-                }
-            }, 200);
-            window.location = 'collaborate://collaborate.center/#/guest?subdomain=www&email=nwork4%40mail.ru&token=TGFpeDhDa0MxRWdBdktCbEFRQUFBUFdKMmp1VitXZEV0amZwSEFITUN4dz0%3d';
+    <script>
+    (function() {
+        var androidAppId = 'com.talon.view';
+        var iOSAppId = 1164518985;
+        var customSchema = 'collaborate://';
+
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var android = /android/i.test(navigator.userAgent);
+        var url = customSchema + window.location.hostname + window.location.pathname;
+
+        window.launchApp =  function(){
+            if (iOS || android) {
+                setTimeout( function() {
+                    if (iOS) {
+                        window.location = 'https://itunes.apple.com/us/app/talonview/id' + iOSAppId + '?mt=8';
+                    } 
+                    if (android) {
+                        window.location = 'market://details?id=' + androidAppId;
+                    }
+                }, 200);
+                window.location = url;
+            }
         }
+    })();  
     </script>
 </body>
 </html>
