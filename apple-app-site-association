@@ -4,11 +4,11 @@
     "details": [
       {
         "appID": "Q9CQP43PCR.com.talon.view",
-        "paths": ["*"]
+        "paths": ["/guest.html*"]
       },
       {
         "appID": "Q9CQP43PCR.com.tabeeb.react",
-        "paths": ["*"]
+        "paths": ["/guest.html*"]
       }
     ]
   }
