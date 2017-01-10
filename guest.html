@@ -47,20 +47,19 @@
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         var android = /android/i.test(navigator.userAgent);
 
+        var marketUrl = (iOS && 'https://itunes.apple.com/us/app/talonview/id1164518985?mt=8')
+                    || (android && 'market://details?id=com.talon.view');
+        console.log(marketUrl);
+
         window.launchApp = function () {
             if (iOS || android) {
-                var url = customSchema + window.location.hostname + window.location.pathname;
+                window.location = customSchema + window.location.hostname + window.location.pathname;
 
                 setTimeout(function () {
-                    if (iOS) {
-                        window.location = 'https://itunes.apple.com/us/app/talonview/id1164518985?mt=8';
-                    }
-                    if (android) {
-                        window.location = 'market://details?id=com.talon.view';
+                    if(confirm('Do you want to go download App now?')){
+                        window.location = marketUrl;
                     }
                 }, 1000);
-
-                window.location = url;
             }
         };
 
