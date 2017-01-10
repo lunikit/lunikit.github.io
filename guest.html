@@ -52,9 +52,8 @@
 
         window.launchApp = function () {
             if (iOS || android) {
-                setTimeout(function () {
-                    document.location = customSchema + window.location.hostname + window.location.pathname;
-                }, 0);
+                document.location = customSchema + window.location.hostname + window.location.pathname;
+
                 setTimeout(function () {
                     document.location = marketUrl;
                 }, 1000);
